@@ -167,3 +167,9 @@ syntax:
     ######################################
     Functions
     ######################################
+
+1. What is Functions?
+   
+   ans: a set of commands which can be called several times with is bash script.
+
+   
