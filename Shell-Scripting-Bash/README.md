@@ -170,6 +170,5 @@ syntax:
 
 1. What is Functions?
    
-   ans: a set of commands which can be called several times with is bash script.
+   ans: A set of commands which can be called several times with is bash script.
 
-   
