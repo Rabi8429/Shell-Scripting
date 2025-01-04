@@ -165,10 +165,141 @@ syntax:
 
 
     ######################################
-    Functions
+               Functions
     ######################################
 
 1. What is Functions?
    
    ans: A set of commands which can be called several times with is bash script.
+  
+  Purpose: 
+   * To make code more readable.
+   * Avoid to write same code again nad again.
+     
+   Sysntax of function:
+     
+       function_name() {             
 
+        commands
+       }
+             OR
+         Compact
+
+         functionName(){ commands }
+
+
+      example: 
+        print_me(){
+         
+         echo " You have been printed"    # this called function body
+
+        }
+
+        print_me # calling a function
+
+  Another way:
+      function print {
+
+
+      }
+     print
+
+
+2. Passing arguments:
+
+     eg:-
+     pass_args(){
+
+     echo " Today's Random no is : $1 "
+ 
+     }
+      pass_args  $RANDOM
+
+
+3. Variable scope
+   
+  * Till now we used global variable.
+  * For local variable #  local vl=2
+     
+     var1=a
+     var2=b
+
+    my_var(){
+      local var1=c
+      local var2=d
+
+      echo "Inside Function"
+      echo "var1 is $var1"
+      echo "var2 is $var2"
+    }
+    echo "Before executing the function"
+  echo "var1 is $var1"
+  echo "var2 is $var2"
+
+   my_var
+    echo "After executing the function"
+    echo "var1 is $var1"
+    echo "var2 is $var2"
+
+
+4. Returning value:
+  Bash function can also return the value.
+
+  Eg.
+    
+    add () {
+      result=$ (($1 + $2))
+    }
+    add 1 2
+    echo " The sum is : $result "
+
+        ######################################################
+                    Loops
+        ######################################################
+1. What is loop?
+
+   ans: It is use to perform repetitive task. 
+
+2. typer of loop     
+  * For loop
+  * While loops
+
+   **** For Loop
+        sysntax:
+        
+        for variable in <list>
+        do
+        command(s)
+        done
+
+        example:
+          echo "List Partition under the disk"
+          for i in /dev/sda*; do
+          echo "$i"
+          done
+
+        another example in oneline:
+         for i in {1..5}; do echo "NUMBER: $i"; done   # semicolon(;) used for break the line
+
+    Another example for loop with if condition:
+
+    
+    for i in {1..10};
+    do 
+    #if [ $((i%2))  = 0 ]; then 
+    #echo "$i number is even"
+    if [ $((i%2))  != 0 ]; then
+    echo "$i number is odd"
+    else
+    echo "$i number is even"
+    fi
+    done
+  
+**** While loop ****
+
+syntax:
+ 
+  while [expression]
+  do 
+  command(s)
+  done
