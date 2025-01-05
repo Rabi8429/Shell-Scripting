@@ -312,3 +312,138 @@ syntax:
     echo "$num * $i = $((num*i))"
     i=$((i+1))
     done
+
+    infinite while exmaple:
+
+    while :
+    do 
+    echo "Hello World"
+    Done
+
+  **** Until loop ***
+      * The block of statements are executed until the expression returns the true.
+
+      syntax:
+       until [expression]; do 
+          statement(s)
+          done
+       
+       example:
+
+       count=10
+       i=20
+
+       until [ $i -lt $count ]; do 
+       echo "$i"
+       ((i--))
+       done
+
+       # another until loop example
+        count=10
+        a=20
+        b=30
+        until [[ $a -lt $count || $b -lt $count ]]; do
+        echo "a : $a, b : $b"
+        ((a--))
+        ((b--))
+        done
+
+    ##############################
+           Bash array
+     ############################        
+
+    ** It is collection of elements
+
+    Initilize the array
+         =  
+         ()
+    syntax:
+      array_name = (element1 element2 elementN)  # without index
+
+      array_name = ([index1]=element1 [index2]=element2 [indexN]= elementN)
+
+      Example:
+       color=([1]=Blue [2]=Red [3]=Brown); echo ${color[1]}; echo ${color[2]}
+             or
+        color=("Blue" "Red" "Brown"); echo  ${color[@]}  # print the all color at oneline
+
+  *** Length of an array
+     syntax:
+      
+      ${#arrayname [@]}
+
+      example: 
+       len=${#color [@]}
+
+       #  len=${#color [*]}
+
+  ** Access elements of array using index
+    example
+    color=("Red" "Brown" "Blue") 
+    echo ${color[0]};
+    echo ${color[1]};
+    echo ${color[2]}
+
+      or
+  color=("Blue" "Red" "Brown" "Black"); echo ${color[0]}; echo ${color[1]}; echo ${color[2]}
+
+
+        #############
+          Bash Read File
+        ##############
+
+    example:
+      var=`cat fs.txt`; echo $var    # here fs.txt is simple file name
+
+      or same, read this file creating variable file
+
+      var=$(<fs.xt)
+      echo $var
+
+      #################
+      Bash Date & Time
+     ####################
+
+     current date & time
+      # date
+      Example: dt=$(date); echo $dt
+
+    ***** Bash date format***
+    By default we print date-month-year  command is 
+      date +%m-%d-%Y
+      # when you use in bash script
+      example:
+      dt=`date +%m-%d-%Y`; echo $dt
+
+  **** current date***
+  sysntax:
+    date +%Y # for the current year
+    yr=$(date +%y); echo "Current Year is : $yr
+    date +%m # for current month
+    date +%d # for corrent day
+
+   **** Current Month****
+   January (Full month name ) command: date +%B
+
+   mth=$(date +%B); echo "Month Full Name is : $mth"
+
+   01 (number) command: date +%m  
+
+    mth=$(date +%m); echo "Month Name is : $mth"
+
+   jan (short) command: date +%b
+
+   mth=$(date +%b); echo "Month Name is : $mth"
+  
+  ***** Current weekdays****
+   Sunday (full name ) command: date +%A
+
+   dt=$(date +%A); echo "Today is $dt"
+
+   Sunday (In number) command: date +%d
+
+    dt=$(date +%d); echo "Today is $dt"
+    
+   Sunday (In short) command: date +%a
+
+   dt=$(date +%a); echo "Today is $dt"
