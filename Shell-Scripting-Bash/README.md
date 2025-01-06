@@ -447,3 +447,50 @@ syntax:
    Sunday (In short) command: date +%a
 
    dt=$(date +%a); echo "Today is $dt"
+
+   *** Current Hour**
+      for 24 hour : date +%H
+      for 12 hour : date +%I
+
+      $ if i get full time in 24 hour then: date +%T
+      $ if i get full tile in 12 huor then: date +%r
+
+      hr=$(date +%H); echo "Current hour: $hr" 
+
+  *** Current Minutes ***
+      for minutes: date +%M
+     mn=$(date +%M); echo "Current Minutes: $mn"
+  *** Current Second ***
+     for second:  date +%S
+     sec=$(date +%S); echo "Current Seconds: $sec"
+
+     $ if i get full time in 24 hour then: date +%T
+      $ if i get full tile in 12 huor then: date +%r
+
+  #######################
+    Bash Sleep
+  #################
+  ** Bash sleep command is used to insert a delay or pause the execution for a specific period of time.
+  
+   Syntax:
+     sleep no[suffix]
+     sleep 3[s- second]
+     sleep  [m - minutes]
+     sleep  [h - hours]
+     sleep  [d - days] 
+
+    #####################
+       Script Example
+    #######################
+
+    *** Check user is root or not.
+    example: if [[ $UID = "0" ]]; then
+             echo "You are root user"
+             else
+             echo "You are not root user"
+            fi
+    *** Chek website UP or Down
+    
+
+
+
