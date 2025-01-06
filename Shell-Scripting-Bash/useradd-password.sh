@@ -1,4 +1,6 @@
 #!/bin/bash
+# User add with encrypted password
+
 
 if [ $(id -u) -eq 0 ]; then
        read -p "Enter the username :" username
