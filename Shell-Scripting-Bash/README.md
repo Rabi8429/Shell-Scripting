@@ -491,6 +491,60 @@ syntax:
             fi
     *** Chek website UP or Down
     
+        read -p "Enter the website name:" website
+        for site in $website
+        do 
+        if curl -I "$site" 2>&1 | grep -w "200\|301" ; then
+        echo "$site is up"
+        else 
+        echo "$site is down"
+        fi
+        done
 
 
+ **** How to check system information****
 
+       # system info
+
+        #Hostname
+        echo -e "******HOSTNAME INFORMATION*****"
+        hostname
+        echo ""
+
+        # Disk space usage
+        echo -e "*********DISK SPACE USAGE********"
+        df -h
+        echo ""
+
+       # Current loged-in user
+       echo -e "*********CURRENTLY LOGED-IN USER*********"
+       who
+       echo ""
+
+      # Free or used Memory check
+      echo -e "********FREE AND USED MEMORY*******"
+      free
+      echo ""
+
+      #System UP time
+      echo -e "*********SYSTEM UP TIME********"
+      uptime
+      echo ""
+ 
+ ******Add a user to linux uncluding password****
+     if [ $(id -u) -eq 0 ]; then
+       read -p "Enter the username :" username
+       read -s -p "Enter the password :" password
+       egrep "^$username"  /etc/passwd >/dev/null
+       if [ $? -eq 0 ]; then
+                echo "$username exists!"
+                exit
+        else
+              pass=$(perl -e 'print crypt($ARGV[0], "password")' $password)
+              useradd -m -p "$pass" "$username"
+              [ $? -eq 0 ] && echo "User has been added" || echo "Filed to add a user"
+        fi
+     else
+        echo "Only root user can add a user"
+        exit
+      fi
