@@ -177,6 +177,7 @@ syntax:
    * Avoid to write same code again nad again.
      
    Sysntax of function:
+   
      
        function_name() {             
 
