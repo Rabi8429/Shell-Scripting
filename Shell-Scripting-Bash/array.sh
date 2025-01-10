@@ -1,6 +1,10 @@
 #!/bin/bash
 
-
+########################
+#Author: Rabi
+#Date: 11-01-2025
+#Version: v1
+########################
 # color=("Blue" "Red" "Brown"); echo ${color[@]}
 color=("Blue" "Red" "Brown");
 echo  ${color[@]}
