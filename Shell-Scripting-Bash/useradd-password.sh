@@ -12,7 +12,7 @@ if [ $(id -u) -eq 0 ]; then
         else
               pass=$(perl -e 'print crypt($ARGV[0], "password")' $password)
               useradd -m -p "$pass" "$username"
-              [ $? -eq 0 ] && echo "User has been added" || echo "Filed to add a user"
+              [ $? -eq 0 ] && echo "User has been added" || echo "Filed to add a user"     (|| means or)
         fi
 else
         echo "Only root user can add a user"
