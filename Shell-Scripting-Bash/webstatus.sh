@@ -8,8 +8,8 @@
 
 # Check the particuler website is up or down!
 set -x # debug mode
-set -e 
-set -o pipefail
+set -e # exit code the script when there is an error.
+set -o pipefail 
 #######################
 
 read -p "Enter the website name:" website
