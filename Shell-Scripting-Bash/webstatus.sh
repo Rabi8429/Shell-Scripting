@@ -10,6 +10,8 @@
 set -x # debug mode
 set -e 
 set -o pipefail
+#######################
+
 read -p "Enter the website name:" website
 for site in $website
 do 
