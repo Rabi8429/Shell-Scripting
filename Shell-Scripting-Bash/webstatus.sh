@@ -1,5 +1,15 @@
 #!/bin/bash
+
+########################
+#Author: Rabi
+#Date: 11-01-2025
+#Version: v1
+########################
+
 # Check the particuler website is up or down!
+set -x # debug mode
+set -e 
+set -o pipefail
 read -p "Enter the website name:" website
 for site in $website
 do 
